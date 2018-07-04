@@ -1,0 +1,1 @@
+include ':app', ':mvcdemo', ':mvpdemo', ':mvvmdemo', ':net'
