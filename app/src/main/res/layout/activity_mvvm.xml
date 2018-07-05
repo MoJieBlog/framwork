@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -13,26 +11,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_mvc"
+        <EditText
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="mvc" />
+            android:hint="name" />
 
-        <Button
-            android:id="@+id/btn_mvp"
+        <EditText
+            android:id="@+id/pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="mvp" />
+            android:hint="pwd" />
 
         <Button
-            android:id="@+id/btn_mvvm"
+            android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MVVM" />
+            android:text="登录" />
 
 
         <TextView
@@ -44,7 +41,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{user.age}" />
+
     </LinearLayout>
-
-
 </layout>
