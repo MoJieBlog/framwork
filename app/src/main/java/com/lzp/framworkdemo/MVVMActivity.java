@@ -1,15 +1,25 @@
 package com.lzp.framworkdemo;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.lzp.framworkdemo.databinding.ActivityMvvmBinding;
+
 public class MVVMActivity extends AppCompatActivity {
 
+    MVVMViewModel viewModel;
+    ActivityMvvmBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.activity_mvvm);
-       /* UserModel userModel = new UserModel("李四","15");
-        viewDataBinding.setVariable()*/
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_mvvm);
+        viewModel = new MVVMViewModel(binding);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        viewModel.onDestroy();
     }
 }

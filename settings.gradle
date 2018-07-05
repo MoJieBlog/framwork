@@ -1,1 +1,1 @@
-include ':app', ':mvcdemo', ':mvpdemo', ':mvvmdemo', ':net'
+include ':app', ':mvcdemo', ':mvpdemo', ':net'

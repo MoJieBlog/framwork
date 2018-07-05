@@ -1,8 +1,8 @@
 package com.lzp.framworkdemo;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import framworkdemo.lzp.com.mvcdemo.MVCLoginActivity;
@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         findViewById(R.id.btn_mvc).setOnClickListener(this);
         findViewById(R.id.btn_mvp).setOnClickListener(this);
         findViewById(R.id.btn_mvvm).setOnClickListener(this);

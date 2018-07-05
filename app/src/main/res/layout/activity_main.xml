@@ -1,50 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <data>
-
-        <variable
-            name="user"
-            type="com.lzp.framworkdemo.UserModel" />
-    </data>
-
-    <LinearLayout
+    <Button
+        android:id="@+id/btn_mvc"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:layout_height="wrap_content"
+        android:text="mvc" />
 
-        <Button
-            android:id="@+id/btn_mvc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="mvc" />
+    <Button
+        android:id="@+id/btn_mvp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="mvp" />
 
-        <Button
-            android:id="@+id/btn_mvp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="mvp" />
+    <Button
+        android:id="@+id/btn_mvvm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MVVM" />
 
-        <Button
-            android:id="@+id/btn_mvvm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MVVM" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="注意：全部用的伪代码，用户名：张三，密码：111111是正确的，效果看log"/>
+</LinearLayout>
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{user.name}" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{user.age}" />
-    </LinearLayout>
-
-
-</layout>

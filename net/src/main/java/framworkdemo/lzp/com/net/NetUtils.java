@@ -26,8 +26,6 @@ public class NetUtils {
             listener.success(1);
         }else if(!pwd.equals("111111")){
             listener.success(2);
-        }else if(name.equals("")&&pwd.equals("")){
-            listener.fail(0);
         }else{
             listener.success(0);
         }

@@ -25,7 +25,7 @@ public class LoginPresenter implements IBasePresenter {
                 switch (status) {
                     //根据status,调整界面。这里假设0：登录成功 1:用户名错误  2：密码错误
                     case 0:
-                        iLogin.loginSuccess(new UserModel());
+                        iLogin.loginSuccess(new UserModel("张三","18"));
                         break;
                     case 1:
                         iLogin.userNameErr();

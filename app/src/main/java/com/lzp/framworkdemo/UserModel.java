@@ -5,10 +5,10 @@ import android.databinding.BaseObservable;
 /**
  * Created by Li Xiaopeng on 18/7/4.
  */
-public class UserModel extends BaseObservable{
+public class UserModel extends BaseObservable {
 
-    public final String name;
-    public final String age;
+    private String name;
+    private String age;
 
     public UserModel(String name, String age) {
         this.name = name;
@@ -19,18 +19,15 @@ public class UserModel extends BaseObservable{
         return name;
     }
 
-    public String getAge() {
-        return age;
-    }
-    /*
-
     public void setName(String name) {
         this.name = name;
     }
 
-
+    public String getAge() {
+        return age;
+    }
 
     public void setAge(String age) {
         this.age = age;
-    }*/
+    }
 }
