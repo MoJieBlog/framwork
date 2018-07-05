@@ -29,6 +29,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="注意：全部用的伪代码，用户名：张三，密码：111111是正确的，效果看log"/>
+        android:text="注意：全部用的伪代码，用户名：张三，密码：111111是正确的，效果看log,项目本身除MainActivity使用MVVM"/>
 </LinearLayout>
 

@@ -1,4 +1,4 @@
-package com.lzp.framworkdemo;
+package com.lzp.framworkdemo.mvvm;
 
 /**
  * Created by Li Xiaopeng on 18/7/5.

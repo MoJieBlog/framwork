@@ -1,4 +1,4 @@
-package com.lzp.framworkdemo;
+package com.lzp.framworkdemo.mvvm;
 
 import android.databinding.ViewDataBinding;
 

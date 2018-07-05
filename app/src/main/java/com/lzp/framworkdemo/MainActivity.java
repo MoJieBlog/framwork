@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.lzp.framworkdemo.mvvm.MVVMActivity;
+
 import framworkdemo.lzp.com.mvcdemo.MVCLoginActivity;
 import framworkdemo.lzp.com.mvpdemo.MVPLoginActivity;
 

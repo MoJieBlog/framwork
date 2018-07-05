@@ -1,9 +1,10 @@
-package com.lzp.framworkdemo;
+package com.lzp.framworkdemo.mvvm;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.lzp.framworkdemo.R;
 import com.lzp.framworkdemo.databinding.ActivityMvvmBinding;
 
 public class MVVMActivity extends AppCompatActivity {

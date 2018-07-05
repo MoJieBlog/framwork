@@ -1,11 +1,10 @@
-package com.lzp.framworkdemo;
+package com.lzp.framworkdemo.mvvm;
 
 import android.util.Log;
 import android.view.View;
 
 import com.lzp.framworkdemo.databinding.ActivityMvvmBinding;
 
-import framworkdemo.lzp.com.mvpdemo.UserModel;
 import framworkdemo.lzp.com.net.NetListener;
 import framworkdemo.lzp.com.net.NetUtils;
 
