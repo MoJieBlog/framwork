@@ -1,20 +1,19 @@
 package framworkdemo.lzp.com.mvpdemo;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import framworkdemo.lzp.com.mvpdemo.preserter.LoginPresenter;
-import framworkdemo.lzp.com.net.NetUtils;
 
 /**
  * Created by Li Xiaopeng on 18/7/4.
  */
-public class MVPLoginActivity extends AppCompatActivity implements ILogin, View.OnClickListener {
+public class MVPLoginActivity extends BaseActivity<LoginPresenter> implements ILogin, View.OnClickListener {
 
     private static final String TAG = "MVPLoginActivity";
 
@@ -22,31 +21,25 @@ public class MVPLoginActivity extends AppCompatActivity implements ILogin, View.
     private EditText etPwd;
     private Button btnLogin;
 
-    private LoginPresenter presenter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_login);
         init();
+    }
 
-
+    @NonNull
+    @Override
+    public LoginPresenter initPresenter() {
+        return new LoginPresenter(this);
     }
 
     private void init() {
-        presenter = new LoginPresenter(this);
-
         etName = findViewById(R.id.et_name);
         etPwd = findViewById(R.id.et_pwd);
         btnLogin = findViewById(R.id.btn_login);
 
         btnLogin.setOnClickListener(this);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        presenter.onDestroy(TAG);
     }
 
     @Override
@@ -85,12 +78,27 @@ public class MVPLoginActivity extends AppCompatActivity implements ILogin, View.
     }
 
     @Override
+    public void refreshSuccess() {
+
+    }
+
+    @Override
+    public void refreshFail() {
+
+    }
+
+
+    public void refresh() {
+        getBasePresenter().refreshData();
+    }
+
+    @Override
     public void onClick(View view) {
         int id = view.getId();
         if (id == R.id.btn_login) {
             String name = etName.getText().toString().trim();
             String pwd = etPwd.getText().toString().trim();
-            presenter.login(name,pwd);
+            getBasePresenter().login(name,pwd);
         }
     }
 }

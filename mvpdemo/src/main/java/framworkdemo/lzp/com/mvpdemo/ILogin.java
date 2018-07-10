@@ -36,4 +36,8 @@ public interface ILogin {
      */
     void loginFail(String desc);
 
+    void refreshSuccess();
+
+
+    void refreshFail();
 }
