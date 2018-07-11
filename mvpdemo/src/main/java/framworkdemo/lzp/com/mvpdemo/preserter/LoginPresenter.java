@@ -1,8 +1,9 @@
 package framworkdemo.lzp.com.mvpdemo.preserter;
 
+import android.content.Context;
 import android.util.Log;
 
-import framworkdemo.lzp.com.mvpdemo.ILogin;
+import framworkdemo.lzp.com.mvpdemo.ILoginView;
 import framworkdemo.lzp.com.mvpdemo.UserModel;
 import framworkdemo.lzp.com.net.NetListener;
 import framworkdemo.lzp.com.net.NetUtils;
@@ -10,17 +11,17 @@ import framworkdemo.lzp.com.net.NetUtils;
 /**
  * Created by Li Xiaopeng on 18/7/4.
  */
-public class LoginPresenter extends BasePresenter {
+public class LoginPresenter extends BasePresenter<ILoginView> {
 
-    private ILogin iLogin;
     private static final String TAG = "LoginPresenter";
 
-    public LoginPresenter(ILogin iLogin) {
-        this.iLogin = iLogin;
+    public LoginPresenter(ILoginView iBaseView) {
+        super(iBaseView);
     }
 
+
     public void login(String name, String pwd) {
-        iLogin.showProgress();
+        iBaseView.showProgress();
         //发送网络请求
         NetUtils.getInstance().sendRequest(name, pwd, new NetListener() {
             @Override
@@ -28,24 +29,24 @@ public class LoginPresenter extends BasePresenter {
                 switch (status) {
                     //根据status,调整界面。这里假设0：登录成功 1:用户名错误  2：密码错误
                     case 0:
-                        iLogin.loginSuccess(new UserModel("张三","18"));
+                        iBaseView.loginSuccess(new UserModel("张三","18"));
                         dosave();
                         turnToMain();
                         break;
                     case 1:
-                        iLogin.userNameErr();
+                        iBaseView.userNameErr();
                         break;
                     case 2:
-                        iLogin.pwdErr();
+                        iBaseView.pwdErr();
                         break;
                 }
-                iLogin.hindProgress();
+                iBaseView.hindProgress();
             }
 
             @Override
             public void fail(int status) {
-                iLogin.hindProgress();
-                iLogin.loginFail("登录失败的原因");
+                iBaseView.hindProgress();
+                iBaseView.loginFail("登录失败的原因");
             }
         });
 
@@ -53,7 +54,7 @@ public class LoginPresenter extends BasePresenter {
 
     public void refreshData(){
         //网络刷新请求
-        iLogin.refreshSuccess();
+        iBaseView.refreshSuccess();
     }
 
     private void dosave() {

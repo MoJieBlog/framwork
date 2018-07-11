@@ -1,9 +1,11 @@
 package framworkdemo.lzp.com.mvpdemo;
 
+import framworkdemo.lzp.com.mvpdemo.preserter.IBaseView;
+
 /**
  * Created by Li Xiaopeng on 18/7/4.
  */
-public interface ILogin {
+public interface ILoginView extends IBaseView{
     /**
      * 展示进度条，网络加载的动画
      */

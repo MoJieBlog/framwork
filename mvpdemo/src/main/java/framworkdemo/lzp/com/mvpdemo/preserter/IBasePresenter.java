@@ -3,7 +3,7 @@ package framworkdemo.lzp.com.mvpdemo.preserter;
 /**
  * Created by Li Xiaopeng on 18/7/4.
  */
-public interface IBasePresenter {
+public interface IBasePresenter<V extends IBaseView> {
     void onCreate();
     void onResume();
     void onStart();

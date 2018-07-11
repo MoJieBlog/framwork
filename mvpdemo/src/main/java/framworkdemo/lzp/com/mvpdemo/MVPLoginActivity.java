@@ -13,7 +13,7 @@ import framworkdemo.lzp.com.mvpdemo.preserter.LoginPresenter;
 /**
  * Created by Li Xiaopeng on 18/7/4.
  */
-public class MVPLoginActivity extends BaseActivity<LoginPresenter> implements ILogin, View.OnClickListener {
+public class MVPLoginActivity extends BaseActivity<LoginPresenter,ILoginView> implements ILoginView, View.OnClickListener {
 
     private static final String TAG = "MVPLoginActivity";
 
@@ -87,11 +87,6 @@ public class MVPLoginActivity extends BaseActivity<LoginPresenter> implements IL
 
     }
 
-
-    public void refresh() {
-        getBasePresenter().refreshData();
-    }
-
     @Override
     public void onClick(View view) {
         int id = view.getId();
@@ -101,4 +96,6 @@ public class MVPLoginActivity extends BaseActivity<LoginPresenter> implements IL
             getBasePresenter().login(name,pwd);
         }
     }
+
+
 }
