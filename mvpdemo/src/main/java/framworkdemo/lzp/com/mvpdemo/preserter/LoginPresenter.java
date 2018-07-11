@@ -52,11 +52,6 @@ public class LoginPresenter extends BasePresenter<ILoginView> {
 
     }
 
-    public void refreshData(){
-        //网络刷新请求
-        iBaseView.refreshSuccess();
-    }
-
     private void dosave() {
 
     }

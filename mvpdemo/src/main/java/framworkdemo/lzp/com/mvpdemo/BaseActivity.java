@@ -11,7 +11,7 @@ import framworkdemo.lzp.com.mvpdemo.preserter.IBaseView;
 /**
  * Created by Li Xiaopeng on 18/7/10.
  */
-public abstract class BaseActivity<T extends BasePresenter<V>,V extends IBaseView> extends AppCompatActivity implements IBaseView{
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements IBaseView{
 
     protected T basePresenter;
 
